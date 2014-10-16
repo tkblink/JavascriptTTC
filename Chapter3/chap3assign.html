@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chapter 3 Assignment</title>
+	<!-- Receive User Input, declare variables, and calculate weekly pay -->
+	<script type="text/javascript">
+		var first_name = prompt("Please enter your first name", "");
+		var last_name = prompt("Please enter your last name", "");
+		var hourly_wage = prompt("Please enter your hourly wage", "");
+		var job_id;
+		var job_title;
+			hourly_wage = parseFloat(hourly_wage);
+		var weeklyPay = hourly_wage*40;
+	</script>
+</head>
+
+<body bgcolor="lightblue">
+
+<script type="text/javascript">
+
+	// Declare Variables that will be printed
+	job_title="Programmer";
+	job_id="B0123456";
+	var linkTag ="<a href=\"http://www.tridenttech.edu/\">Trident Technical College</a><br>";
+	var theEnd="<h1><font color=\"yellow\">THE END</font></h1>";
+
+	//Print
+	document.write("<strong>First Name: </strong>"+first_name+"<br>");
+	document.write("<strong>Last Name: </strong>"+last_name+"<br>");
+	document.write("<strong>Job Title: </strong>"+job_title+"<br>");
+	document.write("<strong>Job ID: </strong>"+job_id+"<br>");
+	document.write("<strong>Weekly Pay: </strong>"+weeklyPay+"<br><br>");
+	document.write(linkTag);
+	document.write(theEnd);
+
+	
+</script>
+				
+</body>
+</html>

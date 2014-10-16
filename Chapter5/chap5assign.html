@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chapter 5 Assignment</title>
+	<script type="text/javascript">
+		//receive input, US dollars to convert
+		var amountUS = prompt("Please enter the amount of US dollars to convert.", "");
+
+			//convert string to float
+		    amountUS = parseFloat(amountUS);
+			
+		//exchange rate values
+		var GBP=.615033;
+		var CAD=1.104349;
+		var EUR=.773619;
+		var YEN=107.182618;
+		var RUP=60.781043;
+
+		//converts US dollars to foreign currency amount
+		function calc_exchange(dollarsUS,exRate) {
+			var converted=dollarsUS*exRate;
+			var dollars=converted.toFixed(2);
+			return dollars;
+		}
+	</script>
+</head>
+
+<body bgcolor="orange">
+
+<script type="text/javascript">
+	
+	//Print US dollar amount and the equivalent amounts in foreign currencies
+	document.write("$"+amountUS+" in U.S. Currency is approximately equivalent to:<br>");
+	document.write( calc_exchange(amountUS,GBP)+" GBP (British Pounds)<br>");
+	document.write( calc_exchange(amountUS,CAD)+" CAD (Canadian Dollars)<br>");
+	document.write( calc_exchange(amountUS,EUR)+" EUR (Euros)<br>");
+	document.write( calc_exchange(amountUS,YEN)+" YEN (Japanese Yen)<br>");
+	document.write( calc_exchange(amountUS,RUP)+" RUP (Indian Rupee)<br>");
+		
+</script>
+				
+</body>
+</html>

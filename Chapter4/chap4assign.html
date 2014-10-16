@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chapter 4 Assignment</title>
+	<script type="text/javascript">
+		//receive input, declare variables
+		var hoursWorked = prompt("Please enter your hours worked (in hours).", "");
+		var hourlyPay = prompt("Please enter your hourly pay ($).", "");
+		var tax = prompt("Please enter the % tax (example input: 8).", "");
+		
+			//convert strings to floats
+			hoursWorked = parseFloat(hoursWorked);
+			hourlyPay = parseFloat(hourlyPay);
+			tax = parseFloat(tax);
+			
+		//calculate final pay
+		function calculate_pay(hoursWork,hourPay,taxes) {
+			var grossPay=hoursWork*hourPay;
+			var taxAmount=grossPay*(taxes/100);
+			var finalPay=grossPay-taxAmount;
+			return finalPay;
+		}
+
+		//calculate net pay with calculate_pay function
+		var netPay = calculate_pay(hoursWorked,hourlyPay,tax);
+	</script>
+</head>
+
+<body bgcolor="lightgreen">
+
+<script type="text/javascript">
+	
+	//print hours worked, hourly payrate, tax rate, and net pay
+	document.write("<h1><b>Hours Worked: "+hoursWorked+"</b></h1><br>");
+	document.write("<h1><b>Hourly payrate: $"+ hourlyPay+"</b></h1><br>");
+	document.write("<h1><b>Tax rate applied: "+ tax +"%</b></h1><br>");
+	document.write("<h1><b>Net Pay = $"+ netPay +"</b></h1><br><br>");
+		
+</script>
+				
+</body>
+</html>

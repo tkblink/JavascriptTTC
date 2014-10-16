@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Purchase Order</title>	
+
+		<script type="text/javascript">
+		<!--HIDE FROM INCOMPATIBLE BROWSERS
+	        function checkField(fieldData){
+		        if (firstName == "")
+				  {
+				    alert("You must complete this field.");
+				    document.forms[0].firstName.focus();
+				    return false;
+				  }
+			}
+		// STOP HIDING FROM INCOMPATIBLE BROWSERS -->
+		</script>
+	</head>
+
+<body bgcolor="white">
+	<h1>Purchase Order</h1>
+	<h2>Products</h2>
+
+<!-- Three drop down lists in a row -->
+<table>
+	<tr>
+		Hand Tools 
+			<form action="">
+				<select name="handTools">
+					<option value="handTool">Hand Tool</option>
+					<option value="saw">Saw</option>
+					<option value="hammer">Hammer</option>
+					<option value="screwdriver">Screwdriver</option>
+					<option value="wrench">Wrench</option>
+					<option value="pliers">Pliers</option>
+				</select>
+			</form>
+		Power Tools 
+			<form action="">
+				<select name="powerTools">
+					<option value="powerTool">Power Tool</option>
+					<option value="circularSaw">Circular Saw</option>
+					<option value="sabreSaw">Sabre Saw</option>
+					<option value="drill">Drill</option>
+					<option value="beltSander">Belt Sander</option>
+					<option value="tableSaw">Table Saw</option>
+				</select>
+			</form>
+		Building Materials
+			<form action="">
+				<select name="buildingMaterials">
+					<option value="materials">Materials</option>
+					<option value="plywood">Plywood</option>
+					<option value="shingles">Shingles</option>
+					<option value="nails">Nails</option>
+					<option value="screws">Screws</option>
+				</select>
+			</form>
+	</tr>
+</table>
+<!-- End three drop down lists in a row -->
+
+	<h2>Customer Information</h2>
+
+     	<p>
+     		<!-- Customer Information Input Fields -->
+     		First Name &nbsp;<input type="text" size="24" name="firstName" placeholder="First Name" >
+     		Last Name &nbsp;<input type="text" size="24" name="lastName" placeholder="Last Name" >
+     		<br><br>
+     		Street Address 1 &nbsp;<input type="text" size="60" name="address1" placeholder="Address 1" >
+     		<br><br>
+     		Street Address 2 &nbsp;<input type="text" size="60" name="address2" placeholder="Address 2" >
+     		<br><br>
+     		City &nbsp;<input type="text" size="30" name="city" placeholder="City" >
+     		State &nbsp;<input type="text" size="15" name="state" placeholder="State" >
+     		Zip &nbsp;<input type="text" size="15" name="zip" placeholder="Zip" >
+     		<br><br>
+     		Phone &nbsp;<input type="text" size="23" name="phone" placeholder="Phone" >
+     		Fax &nbsp;<input type="text" size="23" name="fax" placeholder="Fax" >
+     		<br><br>
+
+     		<!-- Choose payment method with radio buttons -->
+     		Payment Method? &nbsp;
+	     		<input type="radio" name="payMethod" value="Visa" onclick="recordAnswer(1, this.value);" />Visa
+				<input type="radio" name="payMethod" value="MasterCard" onclick="recordAnswer(1, this.value);" />MasterCard
+				<input type="radio" name="payMethod" value="American Express" onclick="recordAnswer(1, this.value);" />American Express
+			<br><br>
+			Credit Card Number &nbsp; <input type="text" size="60" name="creditCardNumber" placeholder="Card Number">
+			<br>
+
+			<!-- Drop down lists for card expiration date -->
+			<table>
+				<tr>
+					Expiration Month
+						<form action="">
+							<select name="Month">
+								<option value="month">Month</option>
+								<option value="jan">01</option>
+								<option value="feb">02</option>
+								<option value="march">03</option>
+								<option value="april">04</option>
+								<option value="may">05</option>
+								<option value="june">06</option>
+								<option value="july">07</option>
+								<option value="aug">08</option>
+								<option value="sept">09</option>
+								<option value="oct">10</option>
+								<option value="nov">11</option>
+								<option value="dec">12</option>
+							</select>
+						</form>
+					Expiration Year
+						<form action="">
+							<select name="Year">
+								<option value="year">Year</option>
+								<option value="2010">2010</option>
+								<option value="2011">2011</option>
+								<option value="2012">2012</option>
+								<option value="2013">2013</option>
+								<option value="2014">2014</option>
+								<option value="2015">2015</option>
+							</select>
+						</form>
+				</tr>
+			</table>
+			<br>
+			
+			<!-- Subit Order Button -->
+			<input type="submit" value="Submit Order" />
+			<form action="FormProcessor.html" method="get" onsubmit="return checkField();">
+     	</p>
+
+	
+			
+</body>
+</html>

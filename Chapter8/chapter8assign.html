@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chapter 8 Assignment </title>
+	<script type="text/javascript">
+	//receive inputs and declare variables
+	var fullName = prompt("Please enter your full name.", "");
+	var age = prompt("Please enter your age.", "");
+	var gender = prompt("Please enter your gender (only M, m, F, or f are allowed as input).", "");
+	//convert gender string to upper case
+	gender=gender.toUpperCase();
+
+	//convert gender letter to full word
+	function theGender(theSex){
+		var theAnswer="";
+		if(gender=="M"){
+			theAnswer="male";
+		}else{
+			theAnswer="female";}
+			return theAnswer;
+	}
+
+	//Person Object
+	function Person(theName,ageYears,sex){
+		this.theName=theName;
+		this.ageYears=ageYears;
+		this.sex=sex;
+
+		//life expectancy method
+		this.life_expect=function(){
+			var lifeLeft=0;
+			if(sex=="M"){
+				lifeLeft=(76-ageYears);
+			}else{
+				lifeLeft=(81-ageYears);
+				}
+			return lifeLeft;
+		}
+
+	}
+	
+	//instance of Person object
+	var user=new Person(fullName,age,gender);
+
+	</script>
+</head>
+
+<body bgcolor="violet">
+<h1>Browser Settings:</h1>
+
+<script type="text/javascript">
+	//Have Java?
+	if(navigator.javaEnabled()){
+		document.write("Java is enabled!<br>");
+	}else{
+		document.write("Java is disabled!<br>");
+	}
+	
+	//print browser information
+	document.write("Browser platform: "+navigator.platform+"<br>");
+	document.write("Browser code name: "+navigator.appCodeName+"<br>");
+	document.write("Browser name: "+navigator.appName+"<br>");
+	document.write("Browser version: "+navigator.appVersion+"<br><br><br>");
+
+	//print object properties and life expectancy of user
+	with (user){
+	document.write("Person's Properties: <br>");
+	document.write(fullName+"<br>");
+	document.write(age+"<br>");
+	document.write(gender+"<br>");
+	document.write(user.life_expect()+"<br><br>");
+	document.write("Hi "+fullName+", as a "+age+" year old "+theGender(gender)+" you are expected to live "+user.life_expect()+" more years!<br>");}
+	
+</script>
+				
+</body>
+</html>

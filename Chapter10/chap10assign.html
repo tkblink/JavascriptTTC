@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chapter 10 Assignment</title>	
+	</head>
+
+<body bgcolor="white">
+	<h1>Event Handlers At Work!</h1>
+	<h2>By <i>Tyson Bowers</i></h2>
+
+	<!--When mousing over link background turns green, when mousing out background turns white-->
+	a. <a href="http://www.google.com"
+			onmouseover="document.body.style.background = 'green'"
+			onmouseout="document.body.style.background = 'white'">Search Here
+		</a>
+		<br><br>
+
+	<!--button that gives an alert-->
+	<form method="post">
+		b. <input type="Button" name="" value="Click Me."
+				onClick="alert('You clicked the button!')">
+	</form><br>
+
+	<!--Text box with placeholder "Sam". onChange gives an alert of what the input was changed to.-->
+	c. My name is <input type="Text" placeholder="Sam" 
+						onChange="alert('Name was changed to: '+value)"> Go ahead, change my name.
+	<br>
+
+	<!--Reload Button-->
+	<form action="" method="post">
+	d. <input type="Button" value="Reload" onClick="history.go(0)">
+	</form><br>
+
+	<!--Button that takes you to "My Favorite Site"-->
+	<form method="post">
+	e. <input type="Button" value="My Favorite Site"
+			onClick="window.open('http://www.w3schools.com')">
+	</form>
+					
+</body>
+</html>

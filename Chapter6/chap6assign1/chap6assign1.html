@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chapter 6 Assignment 1</title>
+	<script type="text/javascript">
+
+		//Enter grades for exams
+		var exam1 = prompt("Please enter your grade for Exam 1 as a whole number.", "");
+		var exam2 = prompt("Please enter your grade for Exam 2 as a whole number.", "");
+		var exam3 = prompt("Please enter your grade for Exam 3 as a whole number.", "");
+		
+		//convert grades to Int
+			exam1 = parseInt(exam1);
+			exam2 = parseInt(exam2);
+			exam3 = parseInt(exam3);
+			
+		//calculate exam average
+		function examAvg(test1,test2,test3) {
+			var average=(test1+test2+test3)/(3);
+			return average;
+		}
+
+		//examAverage variable
+		var examAverage=examAvg(exam1,exam2,exam3);
+		//turn examAverage into an Int
+		examAverage=parseInt(examAverage);
+
+		//assign letter grade with if/else statements
+		function setLetterGrade(exam){
+			if(exam>90){
+				exam="A"; 
+			}else{
+				if(exam>80){
+					exam="B";
+				}else{
+					if(exam>70){
+						exam="C";
+					}else{
+						if(exam>64){
+							exam="D";
+						}else{
+							if(exam<65){
+								exam="F";
+							}
+						}
+					}
+				}
+			}
+		return exam;
+		}
+		//end of letterGrade
+		
+		//declare letterGrade
+		var letterGrade=setLetterGrade(examAverage);
+
+
+		//Input grade to assign corresponding message
+		function setMessage(grade){
+			var theMessage="";
+			//Assign message to grade using a switch
+			switch(grade) {
+				case "A" :
+					theMessage="Great job, keep it up";
+				break;
+				case "B" :
+					theMessage="Very nice work";
+				break;
+				case "C" :
+					theMessage="You can do it, keep studying";
+				break;
+				case "D" :
+					theMessage="You need some help, see the teacher";
+				break;
+				case "F" :
+					theMessage="Please schedule an appointment with your advisor";
+				break;
+				default: 
+					theMessage="Contact your professor about your grade";
+			}
+			return theMessage;
+		}
+
+		//assigns message from setMessage function
+		var message=setMessage(letterGrade);
+
+	</script>
+</head>
+
+<body bgcolor="gray">
+
+<script type="text/javascript">
+	
+	//print exam scores, exam average, the letter grade, and a message
+	document.write("Your 3 exam scores are:<br>");
+	document.write("Exam 1: "+exam1+"<br>");
+	document.write("Exam 2: "+exam2+"<br>");
+	document.write("Exam 3: "+exam3+"<br>");
+	document.write("Average: "+examAverage+"<br>");
+	document.write("Course grade: "+letterGrade+"<br>");
+	document.write(message);
+		
+</script>
+				
+</body>
+</html>

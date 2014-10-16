@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chapter 6 Assignment 2</title>
+	<script type="text/javascript">
+	//This is a Loan Calculator Program
+
+		//Enter information for loan payment
+		var vehiclePrice = prompt("Please enter the vehicle price (like 16900).", "");
+		var downPayment = prompt("Please enter the down payment amount (like 6000).", "");
+		var annualInterestRate = prompt("Please enter the annual interest rate for the loan (like 7.5).", "");
+		
+		//convert information into floats
+			vehiclePrice = parseFloat(vehiclePrice).toFixed(2);
+			downPayment = parseFloat(downPayment).toFixed(2);
+			annualInterestRate = parseFloat(annualInterestRate).toFixed(1);
+
+		//loans in months
+		//month1=24;
+		//month2=36;
+		//month3=48;
+		//month4=60;
+			
+		//calculate loan amount
+		function loanAmt(carPrice,dPayment) {
+			var amt=carPrice-dPayment;
+			return amt.toFixed(2);
+		}
+		//assign loan amount
+		var loanAmount=loanAmt(vehiclePrice,downPayment);
+
+		//calculate monthly interest rate
+		var monthlyInterestRate=(annualInterestRate/1200);
+
+		/*Function which accepts the monthly interest rate, number of months for the loan, and the loan amount and returns the monthly payment.*/
+		function monthlyPayment(monthIntRate,months,loAmt){
+			var base=Math.pow(1+monthIntRate,months);
+			var payment=(loAmt*monthIntRate)/(1-(1/base));
+			return payment;
+		}
+		
+			
+	</script>
+</head>
+
+<body bgcolor="tan">
+
+<script type="text/javascript">
+	
+	//print vehicle price, down payment, annual interest rate, loan amount, and payment per month for number of months
+	document.write("<b><h1>Loan Calculator</h1></b><br>");
+	document.write("Vehicle price: $"+vehiclePrice+"<br>");
+	document.write("Down payment: $"+downPayment+"<br>");
+	document.write("Interest Rate: "+annualInterestRate+"%<br>");
+	document.write("Loan Amount: $"+loanAmount+"<br>");
+	document.write("<pre># of Months     Payment/month</pre>");
+	for (i=24; i<=60;i+=12){
+		var monthPay=monthlyPayment(monthlyInterestRate,i,loanAmount).toFixed(2);
+	document.write("<pre>"+i+"                   $"+monthPay+"</pre>");
+	}
+		
+</script>
+				
+</body>
+</html>
